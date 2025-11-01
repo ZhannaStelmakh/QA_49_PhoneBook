@@ -32,7 +32,7 @@ public class RegistrationTests extends ApplicationManager {
     }
 
     @Test
-    public void registrationNegativeTest(){
+    public void registrationNegativeTest_wrongEmail(){
         User user = positiveUser();
         user.setUsername("wrong email");
         loginPage.typeRegForm(user);

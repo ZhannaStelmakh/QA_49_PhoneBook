@@ -27,8 +27,7 @@ public class LoginTests extends ApplicationManager {
         homePage.clickBtnLoginHeder();
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.typeLoginFormWithUser(user);
-        Assert.assertEquals(loginPage.closeAlertReturnText(), "Wrong email or password");
-
-
+        Assert.assertEquals(loginPage.closeAlertReturnText(),
+                "Wrong email or password");
     }
 }

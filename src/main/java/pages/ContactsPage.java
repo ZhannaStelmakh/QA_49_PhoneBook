@@ -14,13 +14,14 @@ public class ContactsPage extends BasePage{
                 new AjaxElementLocatorFactory(driver, 10), this);
     }
     @FindBy(xpath = "//a[@href='/contacts']")
-    WebElement btnContacts;
+    WebElement btnContactsHeader;
 
     @FindBy(xpath = "//div[@class='contact-page_message__2qafk']")
     WebElement divTextNoContacts;
 
     public boolean isTextContactsPresent(String text){
-        return isTextInElementPresent(btnContacts, text);
+
+        return isTextInElementPresent(btnContactsHeader, text);
     }
 
     public boolean isTextNoContactsPresent(String text){
