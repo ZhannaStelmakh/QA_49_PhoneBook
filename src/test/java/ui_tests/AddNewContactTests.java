@@ -10,6 +10,7 @@ import utils.ContactFactory;
 import utils.HeaderMenuItem;
 
 import static pages.BasePage.*;
+import static utils.PropertiesReader.*;
 
 public class AddNewContactTests extends ApplicationManager {
 
@@ -25,7 +26,9 @@ public class AddNewContactTests extends ApplicationManager {
         homePage = new HomePage(getDriver());
         //loginPage = BasePage.clickButtonHeader(HeaderMenuItem.LOGIN);
         loginPage = clickButtonHeader(HeaderMenuItem.LOGIN);
-        loginPage.typeLoginForm("cherry@gmail.com", "Ch12345$");
+        //loginPage.typeLoginForm("cherry@gmail.com", "Ch12345$");
+        loginPage.typeLoginForm(getProperty("base.properties", "login"),
+                getProperty("base.properties", "password"));
         contactsPage = new ContactsPage(getDriver());
         numberOfContacts = contactsPage.getNumberOfContacts();
         addPage = clickButtonHeader(HeaderMenuItem.ADD);
