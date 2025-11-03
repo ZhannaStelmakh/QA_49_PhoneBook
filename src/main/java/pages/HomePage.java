@@ -23,6 +23,7 @@ public class HomePage extends BasePage{
     //WebElement getBtnLoginHeader = driver.findElement(By.cssSelector("a[href='/login']"));
 
     public void clickBtnLoginHeder(){
+
         btnLoginHeader.click();
     }
 }
