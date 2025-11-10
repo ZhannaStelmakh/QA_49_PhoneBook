@@ -94,6 +94,7 @@ public class ContactsPage extends BasePage{
 //    }
 
     public String getContactCardTest(){
+
         return itemDetailedCard.getText();
     }
 }
