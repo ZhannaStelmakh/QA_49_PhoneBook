@@ -47,7 +47,12 @@ public class WDListener implements WebDriverListener {
     @Override
     public void afterClick(WebElement element) {
         WebDriverListener.super.afterClick(element);
-        logger.info("after click to element {}", element.getTagName());
+        try {
+            logger.info("after click to element {}", element.getTagName());
+        }catch (org.openqa.selenium.StaleElementReferenceException e){
+            e.printStackTrace();
+        }
+//        logger.info("after click to element {}", element.getTagName());
     }
 
     @Override
