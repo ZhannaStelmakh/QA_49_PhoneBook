@@ -14,7 +14,7 @@ import utils.TestNGListener;
 @Listeners(TestNGListener.class)
 public class LoginTests extends ApplicationManager {
 
-    @Test(retryAnalyzer = RetryAnalyzer.class)
+    @Test(groups = {"smoke", "user"})//(retryAnalyzer = RetryAnalyzer.class)
     public void LoginPositiveTest(){
         HomePage homePage = new HomePage(getDriver());
         homePage.clickBtnLoginHeder();
@@ -25,7 +25,7 @@ public class LoginTests extends ApplicationManager {
 
     }
 
-    @Test
+    @Test(groups = "negative")
     public void LoginNegativeTestWrongPassword(){
         User user = new User("cherry@gmail.com", "ch12345$");
         HomePage homePage = new HomePage(getDriver());
